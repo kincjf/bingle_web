@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%include static/css.html%>
+
+  </head>
+  <body ng-app="bingle" ng-controller="root">
+    <h1><%= msg %></h1>
+    <input type="text" ng-model="test">
+    <p ng-bind="test"></p>
+  </body>
+  <%include static/js.html%>
+</html>

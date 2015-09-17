@@ -8,8 +8,10 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var board = require('./routes/board');
 
+var article = require('./routes/article');
+
 var info_user = require('./routes/info/user');
-var info_board = require('./routes/info/board');
+var info_article= require('./routes/info/article');
 var lessMiddleware = require('less-middleware');
 
 var app = express();
@@ -37,7 +39,9 @@ app.use(lessMiddleware('/less', {
 app.use('/', routes);
 app.use('/board', board);
 app.use('/i/user', info_user);
-app.use('/i/board', info_board);
+app.use('/i/article', info_article);
+
+app.use('/p', article);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

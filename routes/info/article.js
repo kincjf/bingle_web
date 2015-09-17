@@ -14,16 +14,17 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  mysql.getRecords("San Francisco", function(err, results) {
+  var start= req.query.start;
+  var count = req.query.count;
+  mysql.getArticleList(start,count, function(err, results) {
     console.log('come');
     if(err) {
       res.send(500, "Server Error");
       return;
     }
-      // Respond with results as JSON
+    console.log(results);
     res.json(results);
     });
-  //res.render('index', { title: 'Express',msg:'앵귤러를 시작해봅시다' });
 });
 
 module.exports = router;

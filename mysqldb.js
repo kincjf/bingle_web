@@ -7,7 +7,7 @@ var connection = mysql.createConnection({
     port : 3306,
     user : 'panophoto',
     password : 'pano113!!@',
-    database : 'pano_photo'
+    database : 'mydb'
 });
 
 connection.connect(function(err) {
@@ -23,7 +23,6 @@ connection.connect(function(err) {
 exports.getRecords = function(city, callback) {
     var sql = "SELECT * FROM mydb.LOCALE_CODE;";
     // get a connection from the pool
-    console.log('test');
     connection.query(sql, function (err,rows) {
         var row;
         row = rows;
@@ -31,6 +30,32 @@ exports.getRecords = function(city, callback) {
         callback(false,row);
 
     });
-
 };
 
+exports.getArticleList = function(start, count, callback) {
+    var sql = "SELECT * FROM mydb.PHOTO LIMIT ?,?";
+    start = parseInt(start);
+    count = parseInt(count);
+    console.log(sql);
+    connection.query(sql,[start,count], function (err,rows) {
+        console.log(err);
+        var row;
+        row = rows;
+        console.log(row);
+        callback(false,row);
+
+    });
+};
+
+exports.getArticle = function(idx, callback) {
+    var sql = "SELECT * FROM PHOTO WHERE IDX_PK=?";
+    // get a connection from the pool
+    console.log('test');
+    connection.query(sql,[idx], function (err,rows) {
+        var row;
+        row = rows;
+
+        callback(false,row);
+
+    });
+};

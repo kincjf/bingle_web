@@ -23,7 +23,7 @@ connection.connect(function(err) {
 exports.getRecords = function(city, callback) {
     var sql = "SELECT * FROM mydb.LOCALE_CODE;";
     // get a connection from the pool
-
+    console.log('test');
     connection.query(sql, function (err,rows) {
         var row;
         row = rows;

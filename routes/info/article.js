@@ -17,14 +17,14 @@ router.get('/', function(req, res, next) {
   var start= req.query.start;
   var count = req.query.count;
   mysql.getArticleList(start,count, function(err, results) {
-    console.log('come');
     if(err) {
       res.send(500, "Server Error");
       return;
     }
-    console.log(results);
+
     res.json(results);
-    });
+
+  });
 });
 
 module.exports = router;

@@ -317,7 +317,7 @@
 
             <!-- POST -->
             <!-- 글의 시작-->
-            <div class="post">
+            <div class="post" ng-repeat="article in articleList" infinite-scroll="loadScroll(1)" infinite-scroll-distance="3">
               <div class="post-media">
                 <div class="image-wrap">
                   <img src="/img/1891216161_ce40e002.jpg" alt="">
@@ -346,14 +346,14 @@
                     <img src="/lib/template/images/author/50x50.gif" alt="">
                   </div>
                   <div class="name-author">
-                    <cite>Barbara Walters</cite>
+                    <cite ng-bind="article.ACCOUNT">name</cite>
                   </div>
                 </div>
                 <div class="post-title">
-                  <h2><a href="blog-single.html">Nam commodo turpis sit amet magna</a></h2>
+                  <h2><a href="blog-single.html" ng-bind="article.PHOTO_NAME">title</a></h2>
                 </div>
                 <div class="post-entry">
-                  <p>Mauris id sapien ante. Praesent vulputate feugiat quam. Duis aliquam nisl non tellus ullamcorper, eget blandit nunc suscipit. Ut placerat urna ac nisl pretium, at gravida purus pulvinar. In pulvinar sit amet dolor non finibus. Aliquam at arcu egestas quam accumsan luctus. Mauris in sagittis lorem. Cras dapibus varius eros at vestibulum.</p>
+                  <p ng-bind="article.COMMENT">comment</p>
                 </div>
                 <div class="post-link">
                   <a href="blog-single.html" class="pi-btn">Read more</a>
@@ -374,175 +374,175 @@
             <!-- END / POST -->
 
             <!-- POST -->
-            <div class="post">
-              <div class="post-media">
-                <div class="image-wrap">
-                  <img src="/lib/template/images/blog/770x500.gif" alt="">
-                </div>
-                <div class="post-cat">
-                  <a href="#">Music</a>
-                </div>
-              </div>
-              <div class="post-meta">
-                <div class="post-format">
-                  <a href="#"><i class="fa fa-soundcloud"></i></a>
-                </div>
-                <div class="post-date">
-                  <span class="year">2015</span>
-                  <span class="month">Mar</span>
-                  <span class="day">14</span>
-                </div>
-                <div class="post-comment">
-                  <i class="fa fa-comment"></i>
-                  <a href="#">105</a>
-                </div>
-              </div>
-              <div class="post-body">
-                <div class="post-author">
-                  <div class="image-thumb">
-                    <img src="/lib/template/images/author/50x50.gif" alt="">
-                  </div>
-                  <div class="name-author">
-                    <cite>Barbara Walters</cite>
-                  </div>
-                </div>
-                <div class="post-title">
-                  <h2><a href="blog-single.html">Nam commodo turpis sit amet magna</a></h2>
-                </div>
-                <div class="post-entry">
-                  <p>Mauris id sapien ante. Praesent vulputate feugiat quam. Duis aliquam nisl non tellus ullamcorper, eget blandit nunc suscipit. Ut placerat urna ac nisl pretium, at gravida purus pulvinar. In pulvinar sit amet dolor non finibus. Aliquam at arcu egestas quam accumsan luctus. Mauris in sagittis lorem. Cras dapibus varius eros at vestibulum.</p>
-                </div>
-                <div class="post-link">
-                  <a href="blog-single.html" class="pi-btn">Read more</a>
-                </div>
-                <div class="post-share">
-                                    <span class="share-toggle pi-btn">
-                                        <i class="fa fa-share-alt"></i>
-                                    </span>
-                  <div class="share">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- END / POST -->
+            <!--<div class="post">-->
+              <!--<div class="post-media">-->
+                <!--<div class="image-wrap">-->
+                  <!--<img src="/lib/template/images/blog/770x500.gif" alt="">-->
+                <!--</div>-->
+                <!--<div class="post-cat">-->
+                  <!--<a href="#">Music</a>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="post-meta">-->
+                <!--<div class="post-format">-->
+                  <!--<a href="#"><i class="fa fa-soundcloud"></i></a>-->
+                <!--</div>-->
+                <!--<div class="post-date">-->
+                  <!--<span class="year">2015</span>-->
+                  <!--<span class="month">Mar</span>-->
+                  <!--<span class="day">14</span>-->
+                <!--</div>-->
+                <!--<div class="post-comment">-->
+                  <!--<i class="fa fa-comment"></i>-->
+                  <!--<a href="#">105</a>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="post-body">-->
+                <!--<div class="post-author">-->
+                  <!--<div class="image-thumb">-->
+                    <!--<img src="/lib/template/images/author/50x50.gif" alt="">-->
+                  <!--</div>-->
+                  <!--<div class="name-author">-->
+                    <!--<cite>Barbara Walters</cite>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-title">-->
+                  <!--<h2><a href="blog-single.html">Nam commodo turpis sit amet magna</a></h2>-->
+                <!--</div>-->
+                <!--<div class="post-entry">-->
+                  <!--<p>Mauris id sapien ante. Praesent vulputate feugiat quam. Duis aliquam nisl non tellus ullamcorper, eget blandit nunc suscipit. Ut placerat urna ac nisl pretium, at gravida purus pulvinar. In pulvinar sit amet dolor non finibus. Aliquam at arcu egestas quam accumsan luctus. Mauris in sagittis lorem. Cras dapibus varius eros at vestibulum.</p>-->
+                <!--</div>-->
+                <!--<div class="post-link">-->
+                  <!--<a href="blog-single.html" class="pi-btn">Read more</a>-->
+                <!--</div>-->
+                <!--<div class="post-share">-->
+                                    <!--<span class="share-toggle pi-btn">-->
+                                        <!--<i class="fa fa-share-alt"></i>-->
+                                    <!--</span>-->
+                  <!--<div class="share">-->
+                    <!--<a href="#"><i class="fa fa-facebook"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-twitter"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-dribbble"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-instagram"></i></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; END / POST &ndash;&gt;-->
 
-            <!-- POST -->
-            <div class="post">
-              <div class="post-media">
-                <div class="image-wrap">
-                  <img src="/lib/template/images/blog/770x500.gif" alt="">
-                </div>
-                <div class="post-cat">
-                  <a href="#">Lifestyle</a>
-                </div>
-              </div>
-              <div class="post-meta">
-                <div class="post-format">
-                  <a href="#"><i class="fa fa-youtube-play"></i></a>
-                </div>
-                <div class="post-date">
-                  <span class="year">2015</span>
-                  <span class="month">Mar</span>
-                  <span class="day">14</span>
-                </div>
-                <div class="post-comment">
-                  <i class="fa fa-comment"></i>
-                  <a href="#">105</a>
-                </div>
-              </div>
-              <div class="post-body">
-                <div class="post-author">
-                  <div class="image-thumb">
-                    <img src="/lib/template/images/author/50x50.gif" alt="">
-                  </div>
-                  <div class="name-author">
-                    <cite>Barbara Walters</cite>
-                  </div>
-                </div>
-                <div class="post-title">
-                  <h2><a href="blog-single.html">Nam commodo turpis sit amet magna</a></h2>
-                </div>
-                <div class="post-entry">
-                  <p>Mauris id sapien ante. Praesent vulputate feugiat quam. Duis aliquam nisl non tellus ullamcorper, eget blandit nunc suscipit. Ut placerat urna ac nisl pretium, at gravida purus pulvinar. In pulvinar sit amet dolor non finibus. Aliquam at arcu egestas quam accumsan luctus. Mauris in sagittis lorem. Cras dapibus varius eros at vestibulum.</p>
-                </div>
-                <div class="post-link">
-                  <a href="blog-single.html" class="pi-btn">Read more</a>
-                </div>
-                <div class="post-share">
-                                    <span class="share-toggle pi-btn">
-                                        <i class="fa fa-share-alt"></i>
-                                    </span>
-                  <div class="share">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- END / POST -->
+            <!--&lt;!&ndash; POST &ndash;&gt;-->
+            <!--<div class="post">-->
+              <!--<div class="post-media">-->
+                <!--<div class="image-wrap">-->
+                  <!--<img src="/lib/template/images/blog/770x500.gif" alt="">-->
+                <!--</div>-->
+                <!--<div class="post-cat">-->
+                  <!--<a href="#">Lifestyle</a>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="post-meta">-->
+                <!--<div class="post-format">-->
+                  <!--<a href="#"><i class="fa fa-youtube-play"></i></a>-->
+                <!--</div>-->
+                <!--<div class="post-date">-->
+                  <!--<span class="year">2015</span>-->
+                  <!--<span class="month">Mar</span>-->
+                  <!--<span class="day">14</span>-->
+                <!--</div>-->
+                <!--<div class="post-comment">-->
+                  <!--<i class="fa fa-comment"></i>-->
+                  <!--<a href="#">105</a>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="post-body">-->
+                <!--<div class="post-author">-->
+                  <!--<div class="image-thumb">-->
+                    <!--<img src="/lib/template/images/author/50x50.gif" alt="">-->
+                  <!--</div>-->
+                  <!--<div class="name-author">-->
+                    <!--<cite>Barbara Walters</cite>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-title">-->
+                  <!--<h2><a href="blog-single.html">Nam commodo turpis sit amet magna</a></h2>-->
+                <!--</div>-->
+                <!--<div class="post-entry">-->
+                  <!--<p>Mauris id sapien ante. Praesent vulputate feugiat quam. Duis aliquam nisl non tellus ullamcorper, eget blandit nunc suscipit. Ut placerat urna ac nisl pretium, at gravida purus pulvinar. In pulvinar sit amet dolor non finibus. Aliquam at arcu egestas quam accumsan luctus. Mauris in sagittis lorem. Cras dapibus varius eros at vestibulum.</p>-->
+                <!--</div>-->
+                <!--<div class="post-link">-->
+                  <!--<a href="blog-single.html" class="pi-btn">Read more</a>-->
+                <!--</div>-->
+                <!--<div class="post-share">-->
+                                    <!--<span class="share-toggle pi-btn">-->
+                                        <!--<i class="fa fa-share-alt"></i>-->
+                                    <!--</span>-->
+                  <!--<div class="share">-->
+                    <!--<a href="#"><i class="fa fa-facebook"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-twitter"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-dribbble"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-instagram"></i></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; END / POST &ndash;&gt;-->
 
-            <!-- POST -->
-            <div class="post">
-              <div class="post-media">
-                <div class="image-wrap">
-                  <img src="/lib/template/images/blog/770x500.gif" alt="">
-                </div>
-                <div class="post-cat">
-                  <a href="#">Restaurant</a>
-                </div>
-              </div>
-              <div class="post-meta">
-                <div class="post-format">
-                  <a href="#"><i class="fa fa-youtube-play"></i></a>
-                </div>
-                <div class="post-date">
-                  <span class="year">2015</span>
-                  <span class="month">Mar</span>
-                  <span class="day">14</span>
-                </div>
-                <div class="post-comment">
-                  <i class="fa fa-comment"></i>
-                  <a href="#">105</a>
-                </div>
-              </div>
-              <div class="post-body">
-                <div class="post-author">
-                  <div class="image-thumb">
-                    <img src="/lib/template/images/author/50x50.gif" alt="">
-                  </div>
-                  <div class="name-author">
-                    <cite>Barbara Walters</cite>
-                  </div>
-                </div>
-                <div class="post-title">
-                  <h2><a href="blog-single.html">Nam commodo turpis sit amet magna</a></h2>
-                </div>
-                <div class="post-entry">
-                  <p>Mauris id sapien ante. Praesent vulputate feugiat quam. Duis aliquam nisl non tellus ullamcorper, eget blandit nunc suscipit. Ut placerat urna ac nisl pretium, at gravida purus pulvinar. In pulvinar sit amet dolor non finibus. Aliquam at arcu egestas quam accumsan luctus. Mauris in sagittis lorem. Cras dapibus varius eros at vestibulum.</p>
-                </div>
-                <div class="post-link">
-                  <a href="blog-single.html" class="pi-btn">Read more</a>
-                </div>
-                <div class="post-share">
-                                    <span class="share-toggle pi-btn">
-                                        <i class="fa fa-share-alt"></i>
-                                    </span>
-                  <div class="share">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- END / POST -->
+            <!--&lt;!&ndash; POST &ndash;&gt;-->
+            <!--<div class="post">-->
+              <!--<div class="post-media">-->
+                <!--<div class="image-wrap">-->
+                  <!--<img src="/lib/template/images/blog/770x500.gif" alt="">-->
+                <!--</div>-->
+                <!--<div class="post-cat">-->
+                  <!--<a href="#">Restaurant</a>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="post-meta">-->
+                <!--<div class="post-format">-->
+                  <!--<a href="#"><i class="fa fa-youtube-play"></i></a>-->
+                <!--</div>-->
+                <!--<div class="post-date">-->
+                  <!--<span class="year">2015</span>-->
+                  <!--<span class="month">Mar</span>-->
+                  <!--<span class="day">14</span>-->
+                <!--</div>-->
+                <!--<div class="post-comment">-->
+                  <!--<i class="fa fa-comment"></i>-->
+                  <!--<a href="#">105</a>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="post-body">-->
+                <!--<div class="post-author">-->
+                  <!--<div class="image-thumb">-->
+                    <!--<img src="/lib/template/images/author/50x50.gif" alt="">-->
+                  <!--</div>-->
+                  <!--<div class="name-author">-->
+                    <!--<cite>Barbara Walters</cite>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-title">-->
+                  <!--<h2><a href="blog-single.html">Nam commodo turpis sit amet magna</a></h2>-->
+                <!--</div>-->
+                <!--<div class="post-entry">-->
+                  <!--<p>Mauris id sapien ante. Praesent vulputate feugiat quam. Duis aliquam nisl non tellus ullamcorper, eget blandit nunc suscipit. Ut placerat urna ac nisl pretium, at gravida purus pulvinar. In pulvinar sit amet dolor non finibus. Aliquam at arcu egestas quam accumsan luctus. Mauris in sagittis lorem. Cras dapibus varius eros at vestibulum.</p>-->
+                <!--</div>-->
+                <!--<div class="post-link">-->
+                  <!--<a href="blog-single.html" class="pi-btn">Read more</a>-->
+                <!--</div>-->
+                <!--<div class="post-share">-->
+                                    <!--<span class="share-toggle pi-btn">-->
+                                        <!--<i class="fa fa-share-alt"></i>-->
+                                    <!--</span>-->
+                  <!--<div class="share">-->
+                    <!--<a href="#"><i class="fa fa-facebook"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-twitter"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-dribbble"></i></a>-->
+                    <!--<a href="#"><i class="fa fa-instagram"></i></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; END / POST &ndash;&gt;-->
 
             <!-- PAGINATION -->
             <div class="pagination">

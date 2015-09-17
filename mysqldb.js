@@ -33,7 +33,7 @@ exports.getRecords = function(city, callback) {
 };
 
 exports.getArticleList = function(start, count, callback) {
-    var sql = "SELECT * FROM mydb.PHOTO LIMIT ?,?";
+    var sql = "SELECT * FROM mydb.PHOTO p left join USER u on p.USER_FK = u.IDX_PK order by p.IDX_PK desc limit ?,?;";
     start = parseInt(start);
     count = parseInt(count);
     console.log(sql);
@@ -49,6 +49,19 @@ exports.getArticleList = function(start, count, callback) {
 
 exports.getArticle = function(idx, callback) {
     var sql = "SELECT * FROM PHOTO WHERE IDX_PK=?";
+    // get a connection from the pool
+    console.log('test');
+    connection.query(sql,[idx], function (err,rows) {
+        var row;
+        row = rows;
+
+        callback(false,row);
+
+    });
+};
+
+exports.getUser = function(idx, callback) {
+    var sql = "SELECT * FROM USER WHERE IDX_PK=?";
     // get a connection from the pool
     console.log('test');
     connection.query(sql,[idx], function (err,rows) {

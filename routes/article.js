@@ -9,7 +9,10 @@ router.get('/upload', function(req, res, next) {
     res.render('article/upload');
 
 });
-//특정 사진 페이지
+
+/**
+ * 특정 사진 페이지
+ */
 router.get('/:pid', function(req, res, next) {
 
     res.render('article/view');

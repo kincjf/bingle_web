@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var board = require('./routes/board');
+var boardUpload = require('./routes/board-upload');
 
 var article = require('./routes/article');
 
@@ -38,6 +39,7 @@ app.use(lessMiddleware('/less', {
 
 app.use('/', routes);
 app.use('/board', board);
+app.use('/board-upload', boardUpload);
 app.use('/i/user', info_user);
 app.use('/i/article', info_article);
 

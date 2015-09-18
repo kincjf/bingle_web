@@ -9,11 +9,14 @@ var makeFolder = require('../modules/make-resource-folder.js');
 
 /* board upload action. */
 router.post('/:account/:timestamp', function(req, res, next) {
+    var resourcePath = "./resources";
+
     makeFolder(req.params.account, req.params.timestamp);
 
-    // Æú´õ ³» ÆÄÀÏ ÀúÀå
+    // í´ë” ë‚´ íŒŒì¼ ì €ì¥
 
-    var imagePath = "./resource/yoonsub/20150914155834/20150914155834.jpg";      // for test
+    var imagePath = resourcePath + "/" + req.params.account + "/" + req.params.timestamp
+        + "/" + "20150914155834.jpg";      // for test
 
     var resultCode = convertVR(imagePath);
 

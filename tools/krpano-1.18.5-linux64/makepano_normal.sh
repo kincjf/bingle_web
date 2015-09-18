@@ -1,5 +1,5 @@
 #!/bin/bash
-# �ϴٰ� �ȵǼ� �Ⱦ��°ɷ�...;;
+# 쓸려고 했는데 잘 안되서 일단 안 쓰는걸로...;;
 export MYAPP_WRAPPER="`readlink -f "$0"`"
 
 HERE="`dirname "$MYAPP_WRAPPER"`"

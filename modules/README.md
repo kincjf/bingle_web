@@ -1,3 +1,5 @@
 # Custom Module
-- convert-vrpano : krpano toolÀ» ÀÌ¿ëÇØ¼­ spherical image¸¦
- cubical type·Î º¯È¯ÇÔ(resource/[id]/[timestamp])
+- convert-vrpano : krpano toolì„ ì´ìš©í•´ì„œ spherical imageë¥¼
+ cubical typeë¡œ ë³€í™˜í•¨(resource/[id]/[timestamp])
+
+- make-resource-folder : í´ë” ìƒì„± (mkdir -p)

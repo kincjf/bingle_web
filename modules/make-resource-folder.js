@@ -5,7 +5,7 @@ var mkdirp = require('mkdirp');
 var resourcePath = './resources';
 
 /**
- * account, timestamp¿¡ ÇØ´çÇÏ´Â Æú´õ¸¦ /resources¿¡ ¸¸µç´Ù
+ * account, timestampì— í•´ë‹¹í•˜ëŠ” í´ë”ë¥¼ /resourcesì— ë§Œë“ ë‹¤
  * @param account
  * @param timestamp
  * @return Returns the first directory that had to be created(absolute path), if any.

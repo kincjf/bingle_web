@@ -7,6 +7,9 @@ var api={};
 
 app.controller("root", function ($rootScope, $scope,$http) {
 
+    $rootScope.user_idx=0;
+    $rootScope.user_name="";
+
     $scope.test="시작해봅시다";
     var ajax = function(method, url, async) {
         return function(data,params, callback, optional_params){
@@ -29,7 +32,10 @@ app.controller("root", function ($rootScope, $scope,$http) {
         };
     };
     api.article ={};
+    api.user ={};
     api.article.all = ajax("get","http://localhost:3000/i/article");
+
+    api.user.info = ajax("get","http://localhost:3000/i/user");
 
 });
 

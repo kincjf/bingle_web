@@ -4,7 +4,7 @@
 var express = require('express');
 var router = express.Router();
 
-var convertVR = require('../modules/convert-vrpano.js');
+var convertVR = require('../modules/convert-vrpano');
 var makeFolder = require('../modules/make-resource-folder.js');
 
 /* board upload action. */

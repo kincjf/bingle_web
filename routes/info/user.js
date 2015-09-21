@@ -1,4 +1,5 @@
 var express = require('express');
+var mysql = require('../../mysqldb');
 
 var router = express.Router();
 
@@ -13,7 +14,16 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 
 
-  res.render('index', { title: 'Express',msg:'앵귤러를 시작해봅시다' });
+  var idx= req.query.idx;
+  mysql.getUser(idx, function(err, results) {
+    if(err) {
+      res.send(500, "Server Error");
+      return;
+    }
+
+    res.json(results);
+
+  });
 });
 
 module.exports = router;

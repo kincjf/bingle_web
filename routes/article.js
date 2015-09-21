@@ -4,6 +4,10 @@
 var express = require('express');
 var router = express.Router();
 
+
+
+
+
 /* GET home page. */
 router.get('/upload', function(req, res, next) {
     res.render('article/upload');
@@ -17,5 +21,7 @@ router.get('/:pid', function(req, res, next) {
 
     res.render('article/view');
 });
+
+
 
 module.exports = router;

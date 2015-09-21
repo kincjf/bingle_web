@@ -15,7 +15,7 @@
      
     <link rel="stylesheet" type="text/css" href="/css/view.css">
 </head>
-<body class="single-post">
+<body class="single-post" ng-app="bingle" ng-controller="root">
 
 		<!-- PRELOADER -->
 		<%include ../addon/header.html%>
@@ -23,9 +23,9 @@
 		<!-- END / PRELOADER -->
 
 		<!-- PAGE WRAP -->
-		<div id="page-wrap">
-
+		<div id="page-wrap" ng-controller="article-view" >
 			<!-- BLOG MAIN CONTENT -->
+			<input type="text" ng-init="pid=<%=pid%>" ng-model="pid" ng-value="<%=pid%>">
 			<section class="blog-content blog-standard">
 				<div class="container">
 					<div class="row">
@@ -37,7 +37,7 @@
 								<div class="post">
 									<div class="post-media">
 										<div class="image-wrap">
-											<img src="/img/1891216161_ce40e002.jpg" alt="">
+											<img ng-src="/{{photo_url}}" alt="">
 										</div>
 									</div>
 									<!-- ABOUT AUTHOR -->
@@ -50,8 +50,8 @@
 												<h4 class="text-uppercase">Gary Neville</h4>
 											</div>
 											<div class="author-content">
-												<p>
-													Phasellus facilisis convallis metus, ut imperdiet augue auctor nec. Duis at velit id augue lobortis porta. Sed varius, enim accumsan aliquam tincidunt, tortor urna vulputate quam, eget finibus urna est in augue.
+												<p ng-bind="comment">
+
 												</p>
 											</div>
 											<div class="author-social">

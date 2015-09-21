@@ -19,7 +19,7 @@ router.get('/upload', function(req, res, next) {
  */
 router.get('/:pid', function(req, res, next) {
 
-    res.render('article/view');
+    res.render('article/view',{"pid":req.params.pid});
 });
 
 

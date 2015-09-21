@@ -33,6 +33,20 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/:idx', function(req, res, next) {
+
+  var idx= req.params.idx;
+  mysql.getArticle(idx, function(err, results) {
+    if(err) {
+      res.send(500, "Server Error");
+      return;
+    }
+
+    res.json(results);
+
+  });
+});
+
 router.post('/:account',upload.single('avatar'),function(req, res, next) {
 
   var account = req.params.account;

@@ -11,6 +11,7 @@ var makeFolder = require('../modules/make-resource-folder.js');
 router.post('/:account/:timestamp', function(req, res, next) {
     var resourcePath = "./resources";
 
+
     makeFolder(req.params.account, req.params.timestamp);
 
     // 폴더 내 파일 저장

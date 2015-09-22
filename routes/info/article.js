@@ -54,7 +54,7 @@ router.post('/:account',upload.single('avatar'),function(req, res, next) {
   makeFolder(account, timestamp);
 
 
-  var new_path = 'resources/'+account+'/'+timestamp+'/'+timestamp+'.jpg';
+  var new_path = 'resources/'+account+'/'+timestamp+'/'+timestamp;
 
   fs.rename(req.file.path, new_path, function (err) {
     var body = req.body;

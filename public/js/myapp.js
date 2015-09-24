@@ -38,10 +38,10 @@ app.controller("root", function ($rootScope, $scope,$http) {
     };
     api.article ={};
     api.user ={};
-    api.article.all = ajax("get","http://localhost:3000/i/article");
-    api.article.one = ajax("get","http://localhost:3000/i/article/");
+    api.article.all = ajax("get","http://113.198.39.114:3000/i/article");
+    api.article.one = ajax("get","http://113.198.39.114:3000/i/article/");
 
-    api.user.info = ajax("get","http://localhost:3000/i/user");
+    api.user.info = ajax("get","http://113.198.39.114:3000/i/user");
 
 
 });

@@ -17,7 +17,7 @@ router.post('/:account/:timestamp', function(req, res, next) {
     // 폴더 내 파일 저장
 
     var imagePath = resourcePath + "/" + req.params.account + "/" + req.params.timestamp
-        + "/" + "20150914155834.jpg";      // for test
+        + "/" + req.params.timestamp+".jpg";      // for test
 
     var resultCode = convertVR(imagePath);
 

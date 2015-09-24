@@ -12,7 +12,7 @@ app.controller("article-view", function ($rootScope, $scope,$http) {
             $scope.photo_url = data.PHOTO_NAME;
             $scope.comment = data.COMMENT;
             console.log(data);
-            embedpano({swf:$scope.photo_url+".swf", xml:$scope.photo_url+".xml", target:"pano", html5:"prefer", passQueryParameters:true});
+            embedpano({swf:"/"+$scope.photo_url+".swf", xml:"/"+$scope.photo_url+".xml", target:"pano", html5:"prefer", passQueryParameters:true});
 
         },[$scope.pid]);
 

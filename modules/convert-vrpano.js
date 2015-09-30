@@ -46,9 +46,10 @@ else if (platform === 'win32' && process.env.SHELL === undefined) {
 _.extend(process.env, { PATH : process.env.PATH + delimeter + krpanoDirectory });
 
 /**
- * convert spherical image to cubical image
+ * Convert spherical image to cubical image
+ * Before execute, must to filtering file which is type of spherical image
  * @param imagePath
- * @returns code - 0(success), other(fail)
+ * @returns code - 0(success), integer(fail)
  */
 module.exports = function(imagePath) {
     var args = [];
@@ -78,7 +79,7 @@ module.exports = function(imagePath) {
         code = 1;
     } else {
         if (msg.stderr == "") {
-           code = 0;
+            code = parseInt(exec(okMsg).toString('utf-8').replace(/\r\n/g, ''), 10);
         } else {
             code = 1;
             log.error("convert-vrpano - " + msg.stderr);

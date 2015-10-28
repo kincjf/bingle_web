@@ -54,24 +54,31 @@ router.post('/:account',upload.single('avatar'),function(req, res, next) {
   makeFolder(account, timestamp);
 
 
-  var new_path = 'resources/'+account+'/'+timestamp+'/'+timestamp+'.jpg';
+  var new_path = 'resources/'+account+'/'+timestamp+'/'+timestamp;
 
-  fs.rename(req.file.path, new_path, function (err) {
+  fs.rename(req.file.path, new_path+'.jpg', function (err) {
     var body = req.body;
+    console.log(err);
+    request.post({url:'http://113.198.39.114:3000/board-upload/'+account+'/'+timestamp}, function (err, httpResponse, isSuccessed) {
+      //if(isSuccessed=="0"){
 
-    Article(body.user_id,new_path,timestamp,body.content,body.lat,body.lon, function (err, result) {
-      if(err){
-        res.json(err);
-        return;
-      }
-      var id = result.insertId;
-      res.redirect('/p/'+id);
+        Article(body.user_id,new_path,timestamp,body.content,body.lat,body.lon, function (err, result) {
+          if(err){
+            res.json(err);
+            return;
+          }
+          var id = result.insertId;
+          res.redirect('/p/'+id);
+        });
+      //}else{
+      //  res.redirect('/');
+      //}
     });
+
 
 
   });
 });
-
 
 function Article(user_id,p_name,time,comment,lat,lon,callback){
 

@@ -47,7 +47,7 @@
 <!-- PAGE WRAP -->
 <div id="page-wrap" ng-controller="upload">
 
-    <%include ../addon/header.html%>
+    <%include ../addon/header.ejs%>
 
     <!-- BLOG MAIN CONTENT -->
     <section class="blog-content blog-standard contact-page">
@@ -69,7 +69,7 @@
                             </div>
                             <div class="post-body margin-zero-top">
                                 <div class="contact-form">
-                                    <form id="uploadform" method="post" enctype="multipart/form-data" action="{{post_url}}">
+                                    <form id="uploadform" method="post" enctype="multipart/form-data" action="upload">
 
                                         <div class="form-item">
                                             <input name="title" type="text" placeholder="제목"/>
@@ -83,7 +83,7 @@
                                         <div class="form-actions">
                                             <input type="submit" value="Send">
                                         </div>
-                                        <input class="none" type="text" name="user_id" value=""  ng-value="user_idx">
+                                        <!--<input class="none" type="text" name="user_id" value=""  ng-value="user_idx">-->
 
 
                                     </form>

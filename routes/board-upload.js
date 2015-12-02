@@ -12,6 +12,7 @@ router.post('/:account/:timestamp', function(req, res, next) {
     var resourcePath = "./resources";
 
 
+    console.log("come in");
     makeFolder(req.params.account, req.params.timestamp);
 
     // 폴더 내 파일 저장
@@ -20,6 +21,7 @@ router.post('/:account/:timestamp', function(req, res, next) {
         + "/" + req.params.timestamp+".jpg";      // for test
 
     var resultCode = convertVR(imagePath);
+
 
     res.json(resultCode);
 });

@@ -12,9 +12,9 @@
 
 
   <%include static/css.html%>
-
-
   <title>Winters</title>
+
+
 </head>
 <body ng-app="bingle" ng-controller="root">
 
@@ -31,7 +31,7 @@
 <!-- PAGE WRAP -->
 <div id="page-wrap" ng-controller="index">
   <!-- HEADER -->
-  <%include addon/header.html%>
+  <%include addon/header.ejs%>
 
 
 
@@ -48,7 +48,7 @@
             <div class="post" ng-repeat="article in articleList" infinite-scroll="loadScroll(1)" infinite-scroll-distance="3">
               <div class="post-media">
                 <div class="image-wrap">
-                  <img src="{{article.PHOTO_NAME}}.jpg" alt="">
+                  <img src="{{article.PHOTO_NAME}}_preview.jpg" alt="">
                 </div>
                 <div class="post-cat">
                   <a href="#">Travel</a>

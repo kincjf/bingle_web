@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Winters</title>
+
+    <%include ../static/css.html%>
+
+</head>
+
+<body>
+
+</body>
+<%include ../static/js.html%>
+<script>
+
+
+
+    FB.init({
+        appId      : '914907761923860',
+        status     : true,
+        xfbml      : true,
+        version    : 'v2.2' // or v2.0, v2.1, v2.2, v2.3
+    });
+
+
+
+
+
+    function getUserInfo(){
+        FB.api(
+            "/me",{fields: 'email,name'},
+            function (response) {
+                if (response && !response.error) {
+                    console.log("res",response);
+                }
+            }
+        );
+    }
+</script>
+</html>

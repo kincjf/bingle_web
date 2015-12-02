@@ -49,7 +49,7 @@ router.post('/upload',upload.single('avatar'),function(req, res, next) {
     fs.rename(req.file.path, new_path+'.jpg', function (err) {
         var body = req.body;
 
-        request.post({url:'http://113.198.39.114:3000/board-upload/'+account+'/'+timestamp}, function (err, httpResponse, isSuccessed) {
+        request.post({url:'http://113.198.39.114/board-upload/'+account+'/'+timestamp}, function (err, httpResponse, isSuccessed) {
             console.log("request");
             //if(isSuccessed=="0"){
 

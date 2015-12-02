@@ -1,17 +1,26 @@
 # bingle_web
-Bingle Project - Spherical Panorama Service Page
-___
+Bingle Project - VR Panorama Service Page
+
+
+# Platform Version
+- node : v0.12.x
+- angular : 1.4.5
+
+
 # 폴더구조
-bin : binary
+- bin : binary
 
-node_modules : npm package
+- node_modules : npm package
 
-public : Front-end Code
+- public : Front-end Code
 
-routes : route(Controller)
+- routes : route(Controller)
 
-resources : [id] -> [업로드날짜] -> [원본이미지,변환이미지폴더,swf,xml]
+- resources : [id] -> [업로드날짜] -> [원본이미지,변환이미지폴더,swf,xml]
 
-sql : DB 설계 파일(mwb - mysql workbench model)
+- sql : DB 설계 파일(mwb - mysql workbench model)
 
-run : 1. setting.bat OR setting.sh(krpano path 설정), 2. node bin/www
+
+# How to run
+- port : 80
+- run : 1. setting.bat OR setting.sh(krpano path 설정), 2. node bin/www

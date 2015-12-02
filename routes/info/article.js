@@ -59,7 +59,7 @@ router.post('/:account',upload.single('avatar'),function(req, res, next) {
   fs.rename(req.file.path, new_path+'.jpg', function (err) {
     var body = req.body;
     console.log(err);
-    request.post({url:'http://113.198.39.114:3000/board-upload/'+account+'/'+timestamp}, function (err, httpResponse, isSuccessed) {
+    request.post({url:'http://113.198.39.114/board-upload/'+account+'/'+timestamp}, function (err, httpResponse, isSuccessed) {
       //if(isSuccessed=="0"){
 
         Article(body.user_id,new_path,timestamp,body.content,body.lat,body.lon, function (err, result) {

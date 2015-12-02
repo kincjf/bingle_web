@@ -1,3 +1,6 @@
+/**
+ * Created by KIMSEONHO on 2015-09-17.
+ */
 var assert = require('assert');
 var vrpano = require('../modules/convert-vrpano');
 

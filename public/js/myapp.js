@@ -44,5 +44,43 @@ app.controller("root", function ($rootScope, $scope,$http) {
     api.user.info = ajax("get","http://113.198.39.114:3000/i/user");
 
 
+
+    $scope.click_facebook_login = function () {
+        FB.init({
+            appId      : '914907761923860',
+            status     : true,
+            xfbml      : true,
+            version    : 'v2.2' // or v2.0, v2.1, v2.2, v2.3
+        });
+        FB.login(function(response) {
+            console.log(response);
+            if (response.authResponse) {
+                console.log('Welcome!  Fetching your information.... ');
+                getUserInfo();
+
+
+            } else {
+                console.log('User cancelled login or did not fully authorize.');
+            }
+        }, {scope: 'public_profile,email,user_likes,user_friends'});
+        function getUserInfo(){
+            FB.api(
+                "/me",{fields: 'email,name'},
+                function (response) {
+                    if (response && !response.error) {
+                        $scope.fb_email = response.email;
+                        console.log($scope.fb_email);
+                        $("#fb_form").submit();
+
+                    }
+                }
+            );
+        }
+
+    };
+
+    $scope.logout = function () {
+        location.href = '/logout';
+    }
 });
 

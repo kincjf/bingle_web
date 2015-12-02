@@ -2,12 +2,19 @@
 <!--[if IE 7 ]> <html class="ie ie7"> <![endif]-->
 <!--[if IE 8 ]> <html class="ie ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="kr"> <!--<![endif]-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:title" content="<%=account%>" />
+    <meta property="og:site_name" content="hihihi"/>
+    <meta property="og:description" content="<%=comment%>" />
+    <meta property="fb:app_id" content="966242223397117" />
+    <meta property="og:type" content="article" />
+    <meta property="article:author" content="http://113.198.39.114:3000/" />
+    <meta property="article:publisher" content="http://113.198.39.114:3000/" />
 
     <%include ../static/css.html%>
 
@@ -16,21 +23,23 @@
     <link rel="stylesheet" type="text/css" href="/css/view.css">
 </head>
 <body class="single-post" ng-app="bingle" ng-controller="root">
-
 		<!-- PRELOADER -->
-		<%include ../addon/header.html%>
+		<%include ../addon/header.ejs%>
 
 		<!-- END / PRELOADER -->
 
 		<!-- PAGE WRAP -->
 		<div id="page-wrap" ng-controller="article-view"  ng-init="pid=<%=pid%>">
-			<!-- BLOG MAIN CONTENT -->
+
+
+            <!-- BLOG MAIN CONTENT -->
 			<section class="blog-content blog-standard">
 				<div class="container">
 					<div class="row">
 						<!-- CONTENT -->
 						<div class="col-md-12">
 							<div class="content">
+                                <img class="none" src="https://s-media-cache-ak0.pinimg.com/736x/af/fb/77/affb77c3171d656dc455b2f5e0ef976c.jpg" alt="">
 
 								<!-- POST -->
 								<div class="post">
@@ -50,15 +59,13 @@
 												<h4 class="text-uppercase">Gary Neville</h4>
 											</div>
 											<div class="author-content">
-												<p ng-bind="comment">
+                                                <p ng-bind="comment">
 
 												</p>
 											</div>
 											<div class="author-social">
-												<a href="#"><i class="fa fa-facebook"></i></a>
-												<a href="#"><i class="fa fa-twitter"></i></a>
-												<a href="#"><i class="fa fa-dribbble"></i></a>
-												<a href="#"><i class="fa fa-google-plus"></i></a>
+												<a href="" ng-click="share_facebook()"><i class="fa fa-facebook"></i> 공유하기</a>
+
 											</div>
 										</div>
 									</div>

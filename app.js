@@ -2,14 +2,16 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var routes = require('./routes/index');
 var board = require('./routes/board');
 var boardUpload = require('./routes/board-upload');
 
 var article = require('./routes/article');
+var cookieParser = require('cookie-parser');
+
+//var session = require('cookie-session');
+var session = require('express-session');
 
 var info_user = require('./routes/info/user');
 var info_article= require('./routes/info/article');
@@ -26,7 +28,6 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use('/resources', express.static('resources'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -36,6 +37,15 @@ app.use(lessMiddleware('/less', {
     compress:true,
     prefix:"/css",
     force:true
+}));
+
+//set session
+app.set('trust proxy', 1); // trust first proxy
+app.use(session({
+    secret: 'copycat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 300000 }
 }));
 
 app.use('/', routes);

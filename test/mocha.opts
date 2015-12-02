@@ -1,0 +1,4 @@
+--require assert
+--reporter list
+--ui tdd
+--timeout 60000

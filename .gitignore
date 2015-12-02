@@ -3,3 +3,4 @@
 .DS_Store
 *.bak
 /resources/**/*
+/test/resources/**

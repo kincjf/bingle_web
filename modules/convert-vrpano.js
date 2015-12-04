@@ -66,6 +66,11 @@ module.exports = function(imagePath) {
         return 1;
     }
 
+    if (!imagePath) {
+        log.error("must pass argument(imagePath) :  " + imagePath);
+        return 1;
+    }
+
     var makepanoArgs = ["makepano", "-config=templates/normal_custom.config"];
     var makepreviewArgs = ["makepreview", "-smooth=0"];
 

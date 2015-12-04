@@ -27,5 +27,11 @@ suite('convert-vrpano', function() {
             var imagePath = './test/resources/20150914155834.jpg';
             assert.equal(vrpano(imagePath), 0);
         });
+
+        test('should return 1 when imagePath null', function() {
+            // write test logic
+            var imagePath;
+            assert.equal(vrpano(imagePath), 0);
+        });
     });
 });

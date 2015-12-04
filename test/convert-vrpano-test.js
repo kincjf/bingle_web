@@ -27,12 +27,8 @@ suite('convert-vrpano', function() {
             var imagePath = './test/resources/20150914155834.jpg';
             assert.equal(vrpano(imagePath), 0);
         });
-
-<<<<<<< HEAD
+        
 		test('should return 1 when imagePath null', function() {
-=======
-        test('should return 1 when imagePath null', function() {
->>>>>>> b1a6bb17ad88381dda72b70d5c5aa91e699c94f6
             // write test logic
             var imagePath;
             assert.equal(vrpano(imagePath), 0);

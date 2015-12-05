@@ -4,8 +4,6 @@
 
 app.controller("article-view", function ($rootScope, $scope,$http) {
 
-
-
     setTimeout(function () {
 
         api.article.one(null,null, function (data) {
@@ -19,13 +17,13 @@ app.controller("article-view", function ($rootScope, $scope,$http) {
 
     },10);
 
-    $scope.share_facebook = function () {
-
-        var url = window.location.href;
-        var popUrl = "https://www.facebook.com/dialog/feed?app_id=914907761923860&display=popup&caption=An%20example%20caption&link="+url+"&redirect_uri="+url;	//팝업창에 출력될 페이지 URL
-        var popOption = "width=600, height=300, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
-        window.open(popUrl,"",popOption);
-
-    }
+    //$scope.share_facebook = function () {       // index와 view에서 동시에 사용하기 때문에 전역으로 옮김
+    //
+    //    var url = window.location.href;
+    //    var popUrl = "https://www.facebook.com/dialog/feed?app_id=914907761923860&display=popup&caption=An%20example%20caption&link="+url+"&redirect_uri="+url;	//팝업창에 출력될 페이지 URL
+    //    var popOption = "width=600, height=300, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+    //    window.open(popUrl,"",popOption);
+    //
+    //}
 
 });

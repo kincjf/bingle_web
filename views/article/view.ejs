@@ -8,17 +8,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta property="og:title" content="<%=account%>" />
-    <meta property="og:site_name" content="hihihi"/>
-    <meta property="og:description" content="<%=comment%>" />
-    <meta property="fb:app_id" content="966242223397117" />
-    <meta property="og:type" content="article" />
-    <meta property="article:author" content="http://113.198.39.114/" />
-    <meta property="article:publisher" content="http://113.198.39.114/" />
+
+	<!-- facebook -->
+  <meta property="og:title" content="<%=account%>" />
+  <meta property="og:site_name" content="bingle.pastelplus.com"/>
+  <meta property="og:description" content="<%=comment%>" />
+  <meta property="fb:app_id" content="966242223397117" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="<%=photo_url_preview%>"/>
+
+	<meta property="article:author" content="http://113.198.39.114/" />
+	<meta property="article:publisher" content="http://113.198.39.114/" />
+
+	<!-- Google -->
+	<meta itemprop="description" content="<%=comment%>">
+	<meta itemprop="image" content="<%=photo_url_preview%>">
+
+	<!-- 트위터 -->
+	<meta name="twitter:card"           content="photo">
+	<meta name="twitter:site"           content="bingle.pastelplus.com">
+	<meta name="twitter:creator"        content="<%=account%>">
+	<meta name="twitter:image"          content="<%=photo_url_preview%>">
+	<meta name="twitter:description"    content="<%=comment%>">
 
     <%include ../static/css.html%>
 
-    <title></title>
+    <title>Bingle+</title>
 
     <link rel="stylesheet" type="text/css" href="/css/view.css">
 </head>
@@ -52,11 +67,11 @@
 									<!-- ABOUT AUTHOR -->
 									<div class="about-author">
 										<div class="image-thumb fl">
-											<img src="/lib/template/images/about/140x140.gif" alt="">
+											<img src="/lib/template/images/about/profile1_140.png" alt="">
 										</div>
 										<div class="author-info">
 											<div class="author-name">
-												<h4 class="text-uppercase">Gary Neville</h4>
+												<h4 class="text-uppercase"><%=account%></h4>
 											</div>
 											<div class="author-content">
                                                 <p ng-bind="comment">

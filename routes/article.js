@@ -90,9 +90,11 @@ router.get('/:pid', function(req, res, next) {
         }
         results = results[0];
         params.photo_url =results.PHOTO_NAME;
+        params.photo_url_preview = results.PHOTO_NAME + "_preview";
         params.comment =results.COMMENT;
         params.account =results.ACCOUNT;
         params.email =results.EMAIL;
+
 
         console.log(params);
 

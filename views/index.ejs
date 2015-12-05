@@ -12,7 +12,7 @@
 
 
   <%include static/css.html%>
-  <title>Winters</title>
+  <title>Bingle+</title>
 
 
 </head>
@@ -71,15 +71,15 @@
               <div class="post-body">
                 <div class="post-author">
                   <div class="image-thumb">
-                    <img src="/lib/template/images/author/50x50.gif" alt="">
+                    <img src="/lib/template/images/author/profile1.png" alt="">
                   </div>
                   <div class="name-author">
                     <cite ng-bind="article.ACCOUNT">name</cite>
                   </div>
                 </div>
-                <div class="post-title">
-                  <h2><a href="/p/{{article.idx}}" ng-bind="article.PHOTO_NAME">title</a></h2>
-                </div>
+                <!--<div class="post-title">  title은 없애기로 했음  -->
+                  <!--<h2><a href="/p/{{article.idx}}" ng-bind="article.PHOTO_NAME">title</a></h2>-->
+                <!--</div>-->
                 <div class="post-entry">
                   <p ng-bind="article.COMMENT">comment</p>
                 </div>
@@ -91,7 +91,7 @@
                                         <i class="fa fa-share-alt"></i>
                                     </span>
                   <div class="share">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href ng-click="share_facebook()"><i class="fa fa-facebook"></i></a>
                     <!--<a href="#"><i class="fa fa-twitter"></i></a>-->
                     <!--<a href="#"><i class="fa fa-dribbble"></i></a>-->
                     <!--<a href="#"><i class="fa fa-instagram"></i></a>-->

@@ -82,12 +82,7 @@ router.get('/login', function(req, res, next) {
   res.render('login/index.ejs', params);
 });
 
-//특정 유저의 갤러리
-router.get('/:id', function(req, res, next) {
 
-  res.json(req.params.id);
-  //res.render('index', { title: 'Express',msg:'앵귤러를 시작해봅시다' });
-});
 
 function setSession(session,email,account,id,login){
 

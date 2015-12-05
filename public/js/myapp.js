@@ -85,7 +85,8 @@ app.controller("root", function ($rootScope, $scope,$http) {
 
     $scope.share_facebook = function (comment, url, picture) {       // index와 view에서 동시에 사용하기 때문에 전역으로 옮김
 
-        var url = window.location.href + url || window.location.href;
+        var location = window.location.href;
+        var url = (url ? location + "p/" + url : location);
         var comment = comment || "My VR Panorama Photo - Bingle+";
         //var popUrl = "https://www.facebook.com/dialog/share?"
         //    + "&app_id=914907761923860"
@@ -96,9 +97,10 @@ app.controller("root", function ($rootScope, $scope,$http) {
             "app_id=914907761923860" +
             "&display=popup" +
             "&caption="+encodeURIComponent(comment) +
-            "&link="+url;
+            "&link="+url +
+            "&redirect_uri=" + url;
         if (picture) {
-            popUrl += "&picture=" + url + picture;
+            popUrl += "&picture=" + location + picture + "_preview.jpg";
         }
 
             //"&redirect_uri="+url;	//팝업창에 출력될 페이지 URL

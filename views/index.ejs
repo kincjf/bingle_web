@@ -48,7 +48,7 @@
             <div class="post" ng-repeat="article in articleList" infinite-scroll="loadScroll(1)" infinite-scroll-distance="3">
               <div class="post-media">
                 <div class="image-wrap">
-                  <img src="{{article.PHOTO_NAME}}_preview.jpg" alt="">
+                  <a href="p/{{article.idx}}"><img src="{{article.PHOTO_NAME}}_preview.jpg" alt=""></a>
                 </div>
                 <div class="post-cat">
                   <a href="#">Travel</a>
@@ -71,10 +71,10 @@
               <div class="post-body">
                 <div class="post-author">
                   <div class="image-thumb">
-                    <img src="/lib/template/images/author/profile1.png" alt="">
+                    <img src="/lib/template/images/author/profile1_50.png" alt="">
                   </div>
                   <div class="name-author">
-                    <cite ng-bind="article.ACCOUNT">name</cite>
+                    <cite ng-bind="{{article.ACCOUNT}}">name</cite>
                   </div>
                 </div>
                 <!--<div class="post-title">  title은 없애기로 했음  -->
@@ -84,14 +84,14 @@
                   <p ng-bind="article.COMMENT">comment</p>
                 </div>
                 <div class="post-link">
-                  <a href="/p/{{article.idx}}" class="pi-btn">Read more</a>
+                  <a href="p/{{article.idx}}" class="pi-btn">Read more</a>
                 </div>
                 <div class="post-share">
                                     <span class="share-toggle pi-btn">
                                         <i class="fa fa-share-alt"></i>
                                     </span>
                   <div class="share">
-                    <a href ng-click="share_facebook()"><i class="fa fa-facebook"></i></a>
+                    <a href ng-click="share_facebook(article.COMMENT, p/{{article.idx}}, {{article.PHOTO_NAME}}_preview.jpg)"><i class="fa fa-facebook"></i></a>
                     <!--<a href="#"><i class="fa fa-twitter"></i></a>-->
                     <!--<a href="#"><i class="fa fa-dribbble"></i></a>-->
                     <!--<a href="#"><i class="fa fa-instagram"></i></a>-->

@@ -83,10 +83,25 @@ app.controller("root", function ($rootScope, $scope,$http) {
         location.href = '/logout';
     }
 
-    $scope.share_facebook = function () {       // index와 view에서 동시에 사용하기 때문에 전역으로 옮김
+    $scope.share_facebook = function (comment, url, picture) {       // index와 view에서 동시에 사용하기 때문에 전역으로 옮김
 
-        var url = window.location.href;
-        var popUrl = "https://www.facebook.com/dialog/feed?app_id=914907761923860&display=popup&caption=An%20example%20caption&link="+url+"&redirect_uri="+url;	//팝업창에 출력될 페이지 URL
+        var url = window.location.href + url || window.location.href;
+        var comment = comment || "My VR Panorama Photo - Bingle+";
+        //var popUrl = "https://www.facebook.com/dialog/share?"
+        //    + "&app_id=914907761923860"
+        //    + "&display=popup"
+        //    + "href=" + "https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F
+        //+ &redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer
+        var popUrl = "https://www.facebook.com/dialog/feed?" +
+            "app_id=914907761923860" +
+            "&display=popup" +
+            "&caption="+encodeURIComponent(comment) +
+            "&link="+url;
+        if (picture) {
+            popUrl += "&picture=" + url + picture;
+        }
+
+            //"&redirect_uri="+url;	//팝업창에 출력될 페이지 URL
         var popOption = "width=600, height=300, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
         window.open(popUrl,"",popOption);
 

@@ -28,10 +28,10 @@ suite('convert-vrpano', function() {
             assert.equal(vrpano(imagePath), 0);
         });
 
-	test('should return 1 when imagePath null', function() {
+		test('should return 1 when imagePath null', function() {
             // write test logic
             var imagePath;
-            assert.equal(vrpano(imagePath), 0);
+            assert.equal(vrpano(imagePath), 1);
         });
     });
 });

@@ -4,3 +4,5 @@
 *.bak
 /resources/**/*
 /test/resources/**
+/bingle
+/uploads

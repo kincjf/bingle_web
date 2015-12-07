@@ -12,33 +12,67 @@
 
 
     <%include ../static/css.html%>
+<style>
+    #result{
+        min-height: 200px;
+        max-height: 500px;
+        max-width: 1024px;
+    }
+    #description{
+        width: 100%;
+        background: rgba(0,0,0,1);
+        color: white;
+        margin: 0;
+        padding: 12px;
+    }
 
+</style>
     <title>Bingle+</title>
 </head>
 
 <body class="single-post" >
+    <div id="description" class="row text-center">
+
+        <h1 style="float: left;font-size: 20px; color: white"><%=account%></h1>
+        <span style="font-size: 20px">
+            <%=comment%>
+        </span>
+        <h1 style="font-size: 20px;float: right;color: white">bingle<span style="color: #E15D5D">+</span></h1>
+    </div>
     <div id="result">
 
     </div>
-<%=photo_url%>
 
 
 
 
 
 
-<%include ../addon/footer.html%>
+
+<!--<%include ../addon/footer.html%>-->
 
 <!-- LOAD JQUERY -->
 <%include ../static/js.html%>
 <script>
     setTimeout(function () {
-
         var photo_url = '<%=photo_url%>';
-            embedpano({swf:"/"+photo_url+".swf", xml:"/"+photo_url+".xml", target:"result", html5:"prefer", passQueryParameters:true});
-
+        console.log(photo_url);
+        embedpano({swf:"/"+photo_url+".swf", xml:"/"+photo_url+".xml", target:"result", html5:"prefer", passQueryParameters:true});
+        resizeHeight();
 
     },10);
+
+    function resizeHeight(){
+        var wid = $("body").css("width");
+        var hei = $("body").css("height");
+        wid = wid.split("px")[0];
+        hei = hei.split("px")[0];
+//        var hei = wid*10/16; //16 : 10의 비율
+        $("#result").css("height",hei);
+        $("#result").css("height",hei-60);
+        console.log(hei,$("#result").css("height"));
+    }
+
 </script>
 
 

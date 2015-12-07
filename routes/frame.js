@@ -10,16 +10,31 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     var params = {};
     var photo_id = req.query.id;
-    mysql.getArticle(photo_id, function (err, result_article) {
-        var result_article = result_article[0];
-        params.photo_url = result_article.PHOTO_NAME;
+
+    mysql.getArticleWithUser(photo_id, function(err, results) {
+        if(err) {
+            res.send(500, "Server Error");
+            return;
+        }
+        results = results[0];
+        params.photo_url =results.PHOTO_NAME;
+        params.photo_url_preview = results.PHOTO_NAME + "_preview.jpg";
+        params.comment =results.COMMENT;
+        params.account =results.ACCOUNT;
+        params.email =results.EMAIL;
+
+        params.comment = params.comment.split(" ")[0];
+
+        console.log(params);
+
         res.render('iframe/main', params);
 
-    });
 
+    });
 
 
 
 });
 
 module.exports = router;
+

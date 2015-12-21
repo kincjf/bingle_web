@@ -57,12 +57,6 @@ router.post('/', function(req, res, next) {
 
   }
 
-  //res.render('index',{title:'title'});
-  //return;
-
-
-
-  //res.render('index', { title: 'Express',msg:'앵귤러를 시작해봅시다' });
 });
 router.get('/logout', function(req, res, next) {
   req.session = removeSession(req.session);
@@ -78,28 +72,24 @@ router.get('/login', function(req, res, next) {
   }
   params.session = req.session;
 
-
   res.render('login/index.ejs', params);
 });
 
-
-
 function setSession(session,email,account,id,login){
-
-
   session.email = email;
   session.account= account;
   session.idx = id;
   session.login = login;
+
   return session;
 }
+
 function removeSession(session){
-
-
   delete session.email;
   delete session.account;
   delete session.id;
   session.login=false;
+
   return session;
 }
 

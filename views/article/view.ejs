@@ -63,6 +63,21 @@
 											<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
 
 										</div>
+
+									</div>
+									<div class="post-meta">
+										<div class="post-format">
+											<a href="#"><i class="fa fa-image"></i></a>
+										</div>
+										<div class="post-date">
+											<span class="year">2015</span>
+											<span class="month">Mar</span>
+											<span class="day">14</span>
+										</div>
+										<div class="post-comment">
+											<i class="fa fa-comment"></i>
+											<a href="#">105</a>
+										</div>
 									</div>
 									<!-- ABOUT AUTHOR -->
 									<div class="about-author">
@@ -74,55 +89,34 @@
 												<h4 class="text-uppercase"><%=account%></h4>
 											</div>
 											<div class="author-content">
-                                                <p ng-bind="comment">
-
-												</p>
+                                                <p ng-bind="comment"></p>
 											</div>
 											<div class="author-social">
 												<a href="" ng-click="share_facebook()"><i class="fa fa-facebook"></i> 공유하기</a>
-
+												<a href="#"><i class="fa fa-twitter"></i></a>		<!-- not supported -->
+												<a href="#"><i class="fa fa-dribbble"></i></a>		<!-- not supported -->
+												<a href="#"><i class="fa fa-google-plus"></i></a>		<!-- not supported -->
+												<a href data-idx="<%=pid%>" data-toggle="modal" data-target="#clipboardModal"><i class="fa fa-sticky-note">embed</i></a>
 											</div>
 										</div>
 									</div>
 									<!-- END / ABOUT AUTHOR -->
 
-									<div class="post-body">
-										<div class="post-title">
+									<!--<div class="post-body">-->
+										<!--<div class="post-title">-->
+										<!--</div>-->
 
-										</div>
+										<!--<div class="post-entry">-->
+										<!--</div>-->
 
-										<div class="post-entry">
-
-
-										</div>
-
-										<div class="post-meta">
-											<div class="post-format">
-												<a href="#"><i class="fa fa-image"></i></a>
-											</div>
-											<div class="post-date">
-												<span class="year">2015</span>
-												<span class="month">Mar</span>
-												<span class="day">14</span>
-											</div>
-											<div class="post-comment">
-												<i class="fa fa-comment"></i>
-												<a href="#">105</a>
-											</div>
-										</div>
-									</div>
+									<!--</div>-->
 									<!-- END / POST -->
-
-									<!-- COMMENTS -->
-									<div id="comments">
-										<div class="comments-inner-wrap">
-											<!--<h3 id="comments-title" class="h5 text-uppercase">3 Comments</h3>-->
-
-										</div>
-									</div>
-									<!-- END / COMMENTS -->
-
 								</div>
+								<!-- COMMENTS -->
+								<div id="comments" style="margin: 0 auto; text-align: center;">
+									<div class="fb-comments" data-numposts="5" data-width="600"></div>
+								</div>
+								<!-- END / COMMENTS -->
 							</div>
 							<!-- END / CONTENT -->
 						</div>
@@ -134,7 +128,20 @@
 		</div>
 		<!-- END / PAGE WRAP -->
 
-<!-- LOAD JQUERY -->
+		<!-- LOAD JQUERY -->
 <%include ../static/js.html%>
+
+<%include ../addon/component.html%>
+<%include ../addon/footer.html%>
+		<div id="fb-root"></div>
+		<script>
+			// facebook comment api
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.5&appId=1418643838390630";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

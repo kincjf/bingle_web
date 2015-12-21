@@ -82,7 +82,7 @@ router.get('/:pid', function(req, res, next) {
         req.session.login=false;
     }
     params.session = req.session;
-    params.pid=req.params.pid;
+    params.pid = req.params.pid;
     mysql.getArticleWithUser(params.pid, function(err, results) {
         if(err) {
             res.send(500, "Server Error");

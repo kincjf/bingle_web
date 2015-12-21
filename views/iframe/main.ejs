@@ -9,7 +9,27 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
+    <!-- facebook -->
+    <meta property="og:title" content="<%=account%>" />
+    <meta property="og:site_name" content="bingle.pastelplus.com"/>
+    <meta property="og:description" content="<%=comment%>" />
+    <meta property="fb:app_id" content="966242223397117" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://bingle.pastelplus.com/<%=photo_url_preview%>"/>
 
+    <meta property="article:author" content="http://113.198.39.114/" />
+    <meta property="article:publisher" content="http://113.198.39.114/" />
+
+    <!-- Google -->
+    <meta itemprop="description" content="<%=comment%>">
+    <meta itemprop="image" content="http://bingle.pastelplus.com/<%=photo_url_preview%>">
+
+    <!-- 트위터 -->
+    <meta name="twitter:card"           content="photo">
+    <meta name="twitter:site"           content="bingle.pastelplus.com">
+    <meta name="twitter:creator"        content="<%=account%>">
+    <meta name="twitter:image"          content="http://bingle.pastelplus.com/<%=photo_url_preview%>">
+    <meta name="twitter:description"    content="<%=comment%>">
 
     <%include ../static/css.html%>
 <style>
@@ -30,52 +50,89 @@
     <title>Bingle+</title>
 </head>
 
-<body class="single-post" >
-    <div id="description" class="row text-center">
+<body class="single-post" ng-app="bingle" ng-controller="root">
+    <div id="page-wrap">
+        <section class="blog-heading text-center">
+            <div class="container">
+                <a href="/p/<%=pid%>" target="_blank"><h1 class="text-uppercase">BINGLE<span style="color: #E15D5D">+</span></h1></a>
+            </div>
+        </section>
 
-        <h1 style="float: left;font-size: 20px; color: white"><%=account%></h1>
-        <span style="font-size: 20px">
-            <%=comment%>
-        </span>
-        <h1 style="font-size: 20px;float: right;color: white">bingle<span style="color: #E15D5D">+</span></h1>
+        <section class="blog-content blog-standard">
+            <div class="container">
+                <div class="row">
+                    <!-- CONTENT -->
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="content">
+
+                            <!-- POST -->
+                            <div class="post">
+                                <div class="post-media">
+                                    <div id="render-pano" class="image-wrap" >
+
+                                    </div>
+                                    <div class="post-cat">
+                                        <a href="#">Travel</a>
+                                    </div>
+                                </div>
+
+                                <div class="post-body">
+                                    <div class="post-author">
+                                        <a href="/p/<%=pid%>" target="_blank">
+                                            <div class="image-thumb">
+                                                <img src="/lib/template/images/author/profile1_50.png" alt="">
+                                            </div>
+                                            <div class="name-author">
+                                                <cite><%=account%></cite>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="post-title">
+                                        <h2><a><%=comment%></a></h2>
+                                    </div>
+                                    <div class="post-meta">
+                                        <div class="post-format">
+                                            <a href="#"><i class="fa fa-image"></i></a>
+                                        </div>
+                                        <div class="post-date">
+                                            <span class="year">2015</span>
+                                            <span class="month">Mar</span>
+                                            <span class="day">14</span>
+                                        </div>
+                                        <div class="post-comment">
+                                            <i class="fa fa-comment"></i>
+                                            <a href="#">105</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END / POST -->
+
+                        </div>
+                    </div>
+                    <!-- END / CONTENT -->
+                </div>
+            </div>
+        </section>
+
+        <!--<%include ../addon/footer.html%>-->
     </div>
-    <div id="result">
-
-    </div>
-
-
-
-
-
-
-
-<!--<%include ../addon/footer.html%>-->
+    <!-- END / PAGE-WRAP -->
 
 <!-- LOAD JQUERY -->
 <%include ../static/js.html%>
 <script>
     setTimeout(function () {
         var photo_url = '<%=photo_url%>';
-        console.log(photo_url);
-        embedpano({swf:"/"+photo_url+".swf", xml:"/"+photo_url+".xml", target:"result", html5:"prefer", passQueryParameters:true});
-        resizeHeight();
+        console.log("photo_url : " + photo_url);
+        embedpano({swf:"/"+photo_url+".swf", xml:"/"+photo_url+".xml", target:"render-pano", html5:"prefer", passQueryParameters:true});
 
+        $("#krpanoSWFObject").css({
+            "min-height" : 500,
+            "height" : "auto"
+        });
     },10);
-
-    function resizeHeight(){
-        var wid = $("body").css("width");
-        var hei = $("body").css("height");
-        wid = wid.split("px")[0];
-        hei = hei.split("px")[0];
-//        var hei = wid*10/16; //16 : 10의 비율
-        $("#result").css("height",hei);
-        $("#result").css("height",hei-60);
-        console.log(hei,$("#result").css("height"));
-    }
-
 </script>
-
-
 </body>
 
 </html>

@@ -34,10 +34,4 @@ app.controller("index", function ($rootScope, $scope,$http) {
     };
     $scope.loadScroll(2);
 
-
-
-
-
-
-
 });

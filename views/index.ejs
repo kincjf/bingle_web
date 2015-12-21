@@ -54,20 +54,6 @@
                   <a href="#">Travel</a>
                 </div>
               </div>
-              <div class="post-meta">
-                <div class="post-format">
-                  <a href="#"><i class="fa fa-image"></i></a>
-                </div>
-                <div class="post-date">
-                  <span class="year">2015</span>
-                  <span class="month">Mar</span>
-                  <span class="day">14</span>
-                </div>
-                <div class="post-comment">
-                  <i class="fa fa-comment"></i>
-                  <a href="#">105</a>
-                </div>
-              </div>
               <div class="post-body">
                 <div class="post-author">
                   <div class="image-thumb">
@@ -80,9 +66,27 @@
                 <!--<div class="post-title">  title은 없애기로 했음  -->
                   <!--<h2><a href="/p/{{article.idx}}" ng-bind="article.PHOTO_NAME">title</a></h2>-->
                 <!--</div>-->
-                <div class="post-entry">
-                  <p ng-bind="article.COMMENT">comment</p>
+                <div class="post-title">
+                  <h2><a ng-bind="article.COMMENT" style="white-space: normal;">comment</a></h2>
                 </div>
+                <div class="post-meta">
+                  <div class="post-format">
+                    <a href="#"><i class="fa fa-image"></i></a>
+                  </div>
+                  <div class="post-date">
+                    <span class="year">2015</span>
+                    <span class="month">Mar</span>
+                    <span class="day">14</span>
+                  </div>
+                  <div class="post-comment">
+                    <i class="fa fa-comment"></i>
+                    <a href="#">105</a>
+                  </div>
+                </div>
+                <!-- -->
+                <!--<div class="post-entry">-->
+                  <!--<p ng-bind="article.COMMENT">comment</p>-->
+                <!--</div>-->
                 <div class="post-link">
                   <a href="p/{{article.idx}}" class="pi-btn">Read more</a>
                 </div>
@@ -92,9 +96,10 @@
                                     </span>
                   <div class="share">
                     <a href ng-click="share_facebook(article.COMMENT,article.idx,article.PHOTO_NAME)"><i class="fa fa-facebook"></i></a>
-                    <!--<a href="#"><i class="fa fa-twitter"></i></a>-->
-                    <!--<a href="#"><i class="fa fa-dribbble"></i></a>-->
-                    <!--<a href="#"><i class="fa fa-instagram"></i></a>-->
+                    <a href="#"><i class="fa fa-twitter"></i></a>   <!-- not supported -->
+                    <a href="#"><i class="fa fa-dribbble"></i></a>    <!-- not supported -->
+                    <a href="#"><i class="fa fa-instagram"></i></a>   <!-- not supported -->
+                    <a href data-idx="{{article.idx}}" data-toggle="modal" data-target="#clipboardModal"><i class="fa fa-sticky-note">embed</i></a>
                   </div>
                 </div>
               </div>
@@ -288,8 +293,6 @@
   </section>
   <!-- BLOG MAIN CONTENT -->
 
-
-
   <%include addon/footer.html%>
 
 
@@ -300,8 +303,6 @@
 <!-- LOAD JQUERY -->
 <%include static/js.html%>
 
-
-
-
+<%include addon/component.html%>
 </body>
 </html>

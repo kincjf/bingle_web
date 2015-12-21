@@ -30,13 +30,9 @@
         margin-top: -65px;
 
     }
-    .preview{
-        width: 250px;
-
-    }
-    .post-body{
-        margin-top: 60px;
-    }
+    /*.post-body{*/
+        /*margin-top: 60px;*/
+    /*}*/
 </style>
 <body class="single-post" ng-app="bingle" ng-controller="root">
 
@@ -70,17 +66,13 @@
                             <div class="post-body margin-zero-top">
                                 <div class="contact-form">
                                     <form id="uploadform" method="post" enctype="multipart/form-data" action="upload">
-
-                                        <div class="form-item">
-                                            <input name="title" type="text" placeholder="제목"/>
-                                        </div>
                                         <div class="form-textarea">
-                                            <textarea name="content">내용</textarea>
+                                            <textarea name="content" placeholder="글을 작성해 주세요"></textarea>
                                         </div>
-                                        <div class="form-item" style="float: inherit">
+                                        <div class="form-item">
                                             <input name="avatar" type="file" id="imginput"/>
                                         </div>
-                                        <div class="form-actions">
+                                        <div class="form-actions" style="text-align: end;">
                                             <input type="submit" value="Send">
                                         </div>
                                         <!--<input class="none" type="text" name="user_id" value=""  ng-value="user_idx">-->
